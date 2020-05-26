@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+
+  build:
+    docker:
+      - image: circleci/python:latest
+    steps:
+      - checkout
+      - run: printenv
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
